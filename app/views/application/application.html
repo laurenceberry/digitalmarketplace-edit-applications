@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+    Digital Marketplace
+{% endblock %}
+
+
+{% block content %}
+    
+<div id="wrapper">
+  <main id="content" role="main">
+  
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <header class="page-heading-smaller page-heading-without-breadcrumb">
+          <h1>
+            Your application for Digital Delivery of HMRC services in DDC Newcastle - Technical requirement
+          </h1>
+        </header>
+
+        <div class="dmspeak">
+          <p>
+            <a href="/application/opportunity">View the opportunity</a>
+          </p>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-one-whole">      
+
+        <h2 class="summary-item-heading" id="opportunity-attributes-3">  
+          Your details
+        </h2>
+        <table class="summary-item-body">
+          <caption class="visually-hidden">
+            Your details
+          </caption>
+          <thead class="summary-item-field-headings">
+            <tr>
+              <th scope="col" class="summary-item-field-heading-first">
+                <span class="visually-hidden">Opportunity attribute name</span>
+              </th>
+              <th scope="col" class="summary-item-field-heading">
+                <span class="visually-hidden">Opportunity attribute value</span>
+              </th>
+              <th scope="col" class="summary-item-field-heading">
+                <span class="visually-hidden">Opportunity attribute value</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>Earliest start date</span>
+              </td>
+
+              <td class="summary-item-field">
+                {% if data['start_date'] %}
+                  <span>{{data['start_date']}}</span>
+                {% else %}
+                  <a href="">Answer required</a>
+                {% endif %}
+              </td>
+              <td  class="summary-item-field-with-action">
+                <span>
+                  {% if data['start_date'] %}
+                    <a href="#">Edit<span class="visually-hidden">summary item</span></a>
+                  {% endif %}
+                </span>
+              </td>
+            </tr>
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>Email address</span>
+              </td>
+              <td class="summary-item-field">
+                {% if data['contact_email'] %}
+                  <span>{{data['contact_email']}}</span>
+                {% else %}
+                  <a href="">Answer required</a>
+                {% endif %}
+              </td>
+              <td  class="summary-item-field-with-action">
+                <span>
+                  {% if data['contact_email'] %}
+                    <a href="#">Edit<span class="visually-hidden">summary item</span></a>
+                  {% endif %}
+                </span>
+              </td>
+            </tr>    
+          </tbody>
+        </table>
+
+        <h2 class="summary-item-heading" id="opportunity-attributes-1">
+          Your essential skills and experience
+        </h2>
+        <p class="summary-item-description">
+          You must be able to provide evidence for each of these requirements.
+        </p>
+        <p class="summary-item-top-level-action">
+          <a href="#" class="summary-change-link">Edit</a>
+        </p>
+
+        <table class="summary-item-body">
+          <caption class="visually-hidden">
+            Your essential skills and experience
+          </caption>
+          <thead class="summary-item-field-headings-visible">
+            <tr>
+              <th scope="col" class="summary-item-field-heading-first">
+                Requirement
+              </th>
+            
+              <th scope="col" class="summary-item-field-heading">
+                Evidence            
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>A requirement</span>
+              </td>         
+              <td class="summary-item-field">
+                {% if data['essential_1'] %}
+                  <span>{{data['essential_1']}}</span>
+                {% else %}
+                  <a class="angry-linnk" href="">Answer required</a>
+                {% endif %}
+              </td>       
+            </tr> 
+          </tbody>
+        </table>
+        
+        <h2 class="summary-item-heading" id="opportunity-attributes-2">  
+          Your nice-to-have skills and experience
+        </h2>
+
+        <p class="summary-item-top-level-action">
+          <a href="#" class="summary-change-link">Edit</a>
+        </p>
+        
+        <table class="summary-item-body">
+          <caption class="visually-hidden">
+            Your nice-to-have skills and experience
+          </caption>
+          <thead class="summary-item-field-headings-visible">
+            <tr>
+              <th scope="col" class="summary-item-field-heading-first">            
+                Requirement
+              </th>
+              <th scope="col" class="summary-item-field-heading">
+                Evidence
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>A requirement</span>    
+              </td>                 
+              <td class="summary-item-field">
+                {% if data['nice_1'] %}
+                  <span>{{data['essential_1']}}</span>
+                {% else %}
+                  <a href="">Answer question</a>
+                {% endif %}   
+              </td>               
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <p class="padding-bottom-small">&nbsp;</p>
+        <button class="button-save">Submit application</button>
+        <a href="">Return to your account</a>
+
+        <p class="hint">You can make changes to your application until Tuesday 31 October 2017 at 11:59pm GMT.</p>
+
+      </div>
+    </div>
+
+<!--     <p class="padding-bottom-small">&nbsp;</p>
+    <div class="secondary-action-link">
+      <a href="/suppliers/opportunities/frameworks/digital-outcomes-and-specialists-2">Your Digital Outcomes and Specialists 2 opportunities</a>
+    </div> -->
+  </main>
+</div>
+
+{% endblock %}
