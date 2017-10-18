@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="">Digital Marketplace</a></li>
+      <li><a href="/award/dashboard/award">Your account</a></li>
+      <li><a href="/award/overview/award?opportunity_id={{data['opportunity_id']}}">{{opportunities[data['opportunity_id']].name}}</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="/application/application" method="post" class="form">
+
+        <h1 class="heading-large">
+          Give evidence of the essential skills and experience
+        </h1>
+        <span class="question-advice">
+          <p>The buyer will assess and score your evidence to shortlist the best suppliers.</p>
+          <p>You’ll need to meet or exceed their requirements to get through to the next stage.</p>
+          <h3>Evidence structure</h3>
+
+          <div class="explanation-list">
+            <p class="lead">When you write your evidence, you should be specific about:</p>
+
+            <ul class="list-bullet">
+              <li>what the situation was</li>
+              <li>the work the team did</li>
+              <li>what the results were</li>
+            </ul>
+          </div>
+
+          <p>You should only provide one example for each essential requirement (unless the buyer specifies otherwise).</p>
+          <p>You can reuse examples across different essential or nice-to-have requirements if you need to.</p>
+        </span>
+
+
+        <div class="form-group">
+          <fieldset>
+            <div class="question" id="essential_1">
+              <label for="essential_1">
+                <span class="question-heading">      
+                  Have demonstrable experience of providing the relevant skills, roles and resources against a variety of technologies required to form a Scrum Team.
+                </span>
+              </label>
+              <textarea class="text-box text-box-large" name="essential_1" id="essential_1"></textarea>    
+            </div>
+
+            <div class="question" id="essential_2">
+              <label for="essential_1">
+                <span class="question-heading">      
+                  Have demonstrable experience of collaborative working with a client's ‘in-house’ teams, including coaching and mentoring, and knowledge sharing.
+                </span>
+              </label>
+              <textarea class="text-box text-box-large" name="essential_2" id="essential_2"></textarea>    
+            </div>
+
+            <div class="question" id="essential_3">
+              <label for="essential_3">
+                <span class="question-heading">      
+                  Have demonstrable experience of successfully developing services using a pragmatic Agile approach.
+                </span>
+              </label>
+              <textarea class="text-box text-box-large" name="essential_3" id="essential_3"></textarea>    
+            </div>
+
+            <div class="question" id="essential_4">
+              <label for="essential_4">
+                <span class="question-heading">      
+                  Have demonstrable experience of scaling up and down teams to accommodate either new requirements or changes within the delivery pipeline.
+                </span>
+              </label>
+              <textarea class="text-box text-box-large" name="essential_4" id="essential_4"></textarea>    
+            </div>
+
+            <input type="submit" class="button-save" value="Save and continue">
+            <a href="/application/application" class="">Return to overview</a>
+          </fieldset>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

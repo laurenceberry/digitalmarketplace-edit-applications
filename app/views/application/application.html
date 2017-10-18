@@ -21,15 +21,32 @@
           </h1>
         </header>
 
+      </div>
+    </div>
+
+
+    {% if data['essential_4'] %}
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <p class="">You can edit your submitted application until Tuesday 31 October 2017 at 11:59pm GMT.</p><br>
+          <a href="/application/applications?draft=false" class="button-save">Make application</a>
+        </div>
+      </div>
+    {% else %}
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <p class="">You must give evidence for all essential skills an experience questions to submit your application by Tuesday 31 October 2017 at 11:59pm GMT.</p>
+        </div>
+      </div>
+    {% endif %}
+
         <div class="dmspeak">
+          <br><br>
           <p>
             <a href="/application/opportunity">View the opportunity</a>
           </p>
-
-          
         </div>
-      </div>
-    </div>
 
     <div class="grid-row">
       <div class="column-one-whole">      
@@ -64,13 +81,13 @@
                 {% if data['start_date'] %}
                   <span>{{data['start_date']}}</span>
                 {% else %}
-                  <a href="">Answer required</a>
+                  <a href="/application/start">Answer required</a>
                 {% endif %}
               </td>
               <td  class="summary-item-field-with-action">
                 <span>
                   {% if data['start_date'] %}
-                    <a href="#">Edit<span class="visually-hidden">summary item</span></a>
+                    <a href="/application/start">Edit<span class="visually-hidden">summary item</span></a>
                   {% endif %}
                 </span>
               </td>
@@ -83,13 +100,13 @@
                 {% if data['contact_email'] %}
                   <span>{{data['contact_email']}}</span>
                 {% else %}
-                  <a href="">Answer required</a>
+                  <a href="/application/email">Answer required</a>
                 {% endif %}
               </td>
               <td  class="summary-item-field-with-action">
                 <span>
                   {% if data['contact_email'] %}
-                    <a href="#">Edit<span class="visually-hidden">summary item</span></a>
+                    <a href="/application/email">Edit<span class="visually-hidden">summary item</span></a>
                   {% endif %}
                 </span>
               </td>
@@ -100,11 +117,11 @@
         <h2 class="summary-item-heading" id="opportunity-attributes-1">
           Your essential skills and experience
         </h2>
-        <p class="summary-item-description">
+<!--         <p class="summary-item-description">
           You must be able to provide evidence for each of these requirements.
-        </p>
+        </p> -->
         <p class="summary-item-top-level-action">
-          <a href="#" class="summary-change-link">Edit</a>
+          <a href="/application/essentials" class="summary-change-link">Edit</a>
         </p>
 
         <table class="summary-item-body">
@@ -123,15 +140,55 @@
             </tr>
           </thead>
           <tbody>
+
             <tr class="summary-item-row">
               <td class="summary-item-field-first">
-                <span>A requirement</span>
+                <span>Have demonstrable experience of providing the relevant skills, roles and resources against a variety of technologies required to form a Scrum Team.</span>
               </td>         
               <td class="summary-item-field">
                 {% if data['essential_1'] %}
                   <span>{{data['essential_1']}}</span>
                 {% else %}
-                  <a class="angry-linnk" href="">Answer required</a>
+                  <a class="angry-linnk" href="/application/essentials">Answers required</a>
+                {% endif %}
+              </td>       
+            </tr> 
+
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>Have demonstrable experience of collaborative working with a client's ‘in-house’ teams, including coaching and mentoring, and knowledge sharing.</span>
+              </td>         
+              <td class="summary-item-field">
+                {% if data['essential_2'] %}
+                  <span>{{data['essential_2']}}</span>
+                {% else %}
+                  <a class="angry-linnk" href="/application/essentials#essential_2">Answers required</a>
+                {% endif %}
+              </td>       
+            </tr> 
+
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>Have demonstrable experience of successfully developing services using a pragmatic Agile approach.</span>
+              </td>         
+              <td class="summary-item-field">
+                {% if data['essential_3'] %}
+                  <span>{{data['essential_3']}}</span>
+                {% else %}
+                  <a class="angry-linnk" href="/application/essentials#essential_3">Answers required</a>
+                {% endif %}
+              </td>       
+            </tr> 
+
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>Have demonstrable experience of scaling up and down teams to accommodate either new requirements or changes within the delivery pipeline.</span>
+              </td>         
+              <td class="summary-item-field">
+                {% if data['essential_4'] %}
+                  <span>{{data['essential_4']}}</span>
+                {% else %}
+                  <a class="angry-linnk" href="/application/essentials#essential_4">Answers required</a>
                 {% endif %}
               </td>       
             </tr> 
@@ -143,7 +200,7 @@
         </h2>
 
         <p class="summary-item-top-level-action">
-          <a href="#" class="summary-change-link">Edit</a>
+          <a href="/application/nice" class="summary-change-link">Edit</a>
         </p>
         
         <table class="summary-item-body">
@@ -158,20 +215,43 @@
               <th scope="col" class="summary-item-field-heading">
                 Evidence
               </th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr class="summary-item-row">
               <td class="summary-item-field-first">
-                <span>A requirement</span>    
+                <span>Supplier would ideally have had a significant multi team contract with a public sector body</span>    
               </td>                 
               <td class="summary-item-field">
                 {% if data['nice_1'] %}
-                  <span>{{data['essential_1']}}</span>
+                  <span>{{data['nice_1']}}</span>
                 {% else %}
-                  <a href="">Answer question</a>
+                  <a href="/application/nice">Answers required</a>
                 {% endif %}   
-              </td>               
+              </td>  
+              <td  class="summary-item-field-with-action">
+                <span class="hint" style="font-size: 16px;">
+                  <!-- Optional -->
+                </span>
+              </td>             
+            </tr>
+            <tr class="summary-item-row">
+              <td class="summary-item-field-first">
+                <span>Experience of working on a multi-active cloud platform using open source software that includes Mongo DB, Github, Jenkins, Selenium, coded in SCALA</span>    
+              </td>                 
+              <td class="summary-item-field">
+                {% if data['nice_2'] %}
+                  <span>{{data['nice_2']}}</span>
+                {% else %}
+                  <a href="/application/nice#nice_2">Answers required</a>
+                {% endif %}   
+              </td>  
+              <td  class="summary-item-field-with-action">
+                <span class="hint" style="font-size: 16px;">
+                  <!-- Optional -->
+                </span>
+              </td>             
             </tr>
           </tbody>
         </table>
@@ -181,10 +261,12 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         <p class="padding-bottom-small">&nbsp;</p>
-        <button class="button-save">Submit application</button>
-        <a href="">Return to your account</a>
 
-        <p class="hint">You can make changes to your application until Tuesday 31 October 2017 at 11:59pm GMT.</p>
+        {% if data['essential_4'] %}
+          <p class="hint">You can edit your submitted application until <br>Tuesday 31 October 2017 at 11:59pm GMT.</p>
+          <a href="/application/whats_next" class="button-save">Make application</a><br>
+        {% endif %}
+        <a href="/application/applications">Return to your account</a>
 
       </div>
     </div>

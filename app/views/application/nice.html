@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="">Digital Marketplace</a></li>
+      <li><a href="/award/dashboard/award">Your account</a></li>
+      <li><a href="/award/overview/award?opportunity_id={{data['opportunity_id']}}">{{opportunities[data['opportunity_id']].name}}</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="/application/application" method="post" class="form">
+
+        <h1 class="heading-large">
+          Do you have any of the nice-to-have skills or experience?
+        </h1>
+          <span class="question-advice">
+            <p>All nice-to-have skills and experience are optional.</p>
+          <p>The buyer will assess and score your evidence to shortlist the best suppliers.</p>
+          <h3 class="heading-small">Evidence structure</h3>
+
+          <div class="explanation-list">
+            <p class="lead">When you write your evidence, you should be specific about:</p>
+
+            <ul class="list-bullet">
+              <li>what the situation was</li>
+              <li>the work the team did</li>
+              <li>what the results were</li>
+            </ul>
+          </div>
+
+          <p>You should only provide one example for each nice-to-have requirement (unless the buyer specifies otherwise).</p>
+          <p>You can reuse examples across different essential or nice-to-have requirements if you need to.</p>
+              </span>
+
+
+        <div class="form-group">
+          <fieldset>
+        <legend>
+          <span class="question-heading">
+            <br>
+            Supplier would ideally have had a significant multi team contract with a public sector body
+          </span>
+        </legend>
+        
+            <div class="multiple-choice" data-target="evidence-0">
+              <input type="radio" name="yesNo-0" id="input-yesNo-0-1" value="True" checked="checked" aria-controls="evidence-0" aria-expanded="false">
+              <label class="radio selected" for="input-yesNo-0-1">
+                Yes
+              </label>
+            </div>
+            
+            <div class="multiple-choice">
+              <input type="radio" name="yesNo-0" id="input-yesNo-0-2" value="False">
+              <label class="radio" for="input-yesNo-0-2">
+                No
+              </label>
+            </div>
+
+          <fieldset>
+        <legend>
+          <span class="question-heading">
+            <br><br>
+            Experience of working on a multi-active cloud platform using open source software that includes Mongo DB, Github, Jenkins, Selenium, coded in SCALA
+          </span>
+        </legend>
+        
+            <div class="multiple-choice" data-target="evidence-0">
+              <input type="radio" name="yesNo-0" id="input-yesNo-0-1" value="True" checked="checked" aria-controls="evidence-0" aria-expanded="false">
+              <label class="radio selected" for="input-yesNo-0-1">
+                Yes
+              </label>
+            </div>
+            
+            <div class="multiple-choice">
+              <input type="radio" name="yesNo-0" id="input-yesNo-0-2" value="False">
+              <label class="radio" for="input-yesNo-0-2">
+                No
+              </label>
+            </div>
+
+            </fieldset>
+            <fieldset>
+
+
+            <input type="submit" class="button-save" value="Save and continue">
+            <a href="/application/application" class="">Return to overview</a>
+          </fieldset>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

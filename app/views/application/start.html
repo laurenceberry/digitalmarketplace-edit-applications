@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="">Digital Marketplace</a></li>
+      <li><a href="/award/dashboard/award">Your account</a></li>
+      <li><a href="/award/overview/award?opportunity_id={{data['opportunity_id']}}">{{opportunities[data['opportunity_id']].name}}</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form action="/application/email" method="post" class="form">
+
+        <h1 class="heading-large">
+          When is the earliest the team can start?
+        </h1>
+        <span class="question-advice">
+          <p>The buyer needs the team to start: Wednesday 9 September 2020</p>
+        </span>
+
+
+        <div class="form-group">
+          <fieldset>
+             <div class="question" id="start_date">
+              <label for="start_date">
+                <span class="hint">
+                  eg 31/12/2020
+                </span>
+              </label>
+                <input
+                  type="text"
+                  name="start_date"
+                  id="start_date"
+                  class="text-box"
+                  value="{{data['start_date']}}"
+                  style="width: 150px;"
+                />    
+            </div>
+
+            <input type="submit" class="button-save" value="Save and continue">
+
+          </fieldset>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
