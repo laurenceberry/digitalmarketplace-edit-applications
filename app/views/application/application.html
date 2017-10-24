@@ -10,6 +10,13 @@
 <div id="wrapper">
   <main id="content" role="main">
   
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="">Digital Marketplace</a></li>
+      <li><a href="">Hide and Seek Ninjas</a></li>
+    </ol>
+  </div>
+      
 
 
     <div class="grid-row">
@@ -17,36 +24,32 @@
         
         <header class="page-heading-smaller page-heading-without-breadcrumb">
           <h1>
-            Your application for Digital Delivery of HMRC services in DDC Newcastle - Technical requirement
+            {% if data['complete'] == "true" %}
+              Your application for Digital Delivery of HMRC services in DDC Newcastle - Technical requirement
+            {% else %}
+              Check your answers
+            {% endif %}
           </h1>
         </header>
 
       </div>
     </div>
 
-
-    {% if data['essential_4'] %}
-      <div class="grid-row">
-        <div class="column-two-thirds">
-          <p class="">You can edit your submitted application until Tuesday 31 October 2017 at 11:59pm GMT.</p><br>
-          <a href="/application/applications?draft=false" class="button-save">Make application</a>
-        </div>
-      </div>
-    {% else %}
-
-      <div class="grid-row">
-        <div class="column-two-thirds">
-          <p class="">You must give evidence for all essential skills an experience questions to submit your application by Tuesday 31 October 2017 at 11:59pm GMT.</p>
-        </div>
+    {% if data['complete'] == "true" %}
+      <div class="dmspeak">
+        <p>
+          <a href="/application/opportunity">View the opportunity</a><br>
+        </p>
       </div>
     {% endif %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <!-- <a href="/application/applications?draft=false" class="button-save">Make application</a> -->
+      </div>
+    </div>
 
-        <div class="dmspeak">
-          <br><br>
-          <p>
-            <a href="/application/opportunity">View the opportunity</a>
-          </p>
-        </div>
+
+
 
     <div class="grid-row">
       <div class="column-one-whole">      
@@ -227,7 +230,7 @@
                 {% if data['nice_1'] %}
                   <span>{{data['nice_1']}}</span>
                 {% else %}
-                  <a href="/application/nice">Answers required</a>
+                  
                 {% endif %}   
               </td>  
               <td  class="summary-item-field-with-action">
@@ -236,7 +239,7 @@
                 </span>
               </td>             
             </tr>
-            <tr class="summary-item-row">
+            <tr class="summary-item-row"> 
               <td class="summary-item-field-first">
                 <span>Experience of working on a multi-active cloud platform using open source software that includes Mongo DB, Github, Jenkins, Selenium, coded in SCALA</span>    
               </td>                 
@@ -244,7 +247,7 @@
                 {% if data['nice_2'] %}
                   <span>{{data['nice_2']}}</span>
                 {% else %}
-                  <a href="/application/nice#nice_2">Answers required</a>
+                  
                 {% endif %}   
               </td>  
               <td  class="summary-item-field-with-action">
@@ -262,12 +265,11 @@
       <div class="column-two-thirds">
         <p class="padding-bottom-small">&nbsp;</p>
 
-        {% if data['essential_4'] %}
-          <p class="hint">You can edit your submitted application until <br>Tuesday 31 October 2017 at 11:59pm GMT.</p>
-          <a href="/application/whats_next" class="button-save">Make application</a><br>
-        {% endif %}
-        <a href="/application/applications">Return to your account</a>
-
+          <!-- <p class="hint">You can edit your submitted application until <br>Tuesday 31 October 2017 at 11:59pm GMT.</p> -->
+          {% if data['complete'] != "true" %}
+            <p class="">Once you submit you can update your application until Tuesday 31 October 2017 at 11:59pm GMT.</p><br>
+            <a href="/application/whats_next?success=true" class="button-save">Submit application</a><br>
+          {% endif %}
       </div>
     </div>
 

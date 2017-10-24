@@ -9,25 +9,27 @@
 <main id="content" role="main">
       
 
-
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="">Digital Marketplace</a></li>
+      <li><a href="">Your account</a></li>
+      <li><a href="">Your Digital Outcomes and Specialists 2 opportunities</a></li>
+    </ol>
+  </div>
 
   
   
-    
-    
-      
-        
-          <span data-analytics="trackPageView" data-url="/suppliers/opportunities/24987/responses/result?result=success"></span>
+    {% if data['success'] == "true" %}
+      <div class="grid-row">
+        <div class="column-one-whole">
           <div class="banner-success-without-action">
-  
-  <p class="banner-message">
-    Your application has been submitted.
-  </p>
-  
-</div>
-        
-      
-    
+            <p class="banner-message">
+              Your application has been submitted.
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
   
 
 
@@ -35,22 +37,21 @@
   <div class="column-two-thirds">
     
         <header class="page-heading-smaller page-heading-without-breadcrumb"><h1>
-    Your application for Hide and seek ninjas
+    What happens next
   </h1>
 </header>
     
 
     <div class="dmspeak">
         
-          <h2 class="heading-medium">What happens next</h2>
 
           
-            <h3>Shortlist</h3>
+            <h2 class="heading-medium">Shortlist</h2>
 
             <p>When the opportunity closes, the buyer will score your evidence. If you’re one of the top 3 suppliers, you'll go through to the evaluation stage.</p>
             <p>The buyer will tell you if you're not successful.</p>
 
-            <h3>Evaluation</h3>
+            <h2 class="heading-medium">Evaluation</h2>
 
             <div class="explanation-list">
               <p class="lead">At the evaluation stage, the buyer will ask you to provide:</p>
